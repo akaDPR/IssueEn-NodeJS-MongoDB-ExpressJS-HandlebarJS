@@ -1,0 +1,50 @@
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="login">
+			<div class="container">
+				{{#if registered}}
+					<div class="form-group">
+						<span class="label label-success">{{registered}}</span>
+					</div>
+				{{/if}}	
+				<form  method="POST" action="/user/auth/login">
+				<div class="form-group">
+					<label>E-mail</label>
+					<input type="text" class="form-control" name="email">
+				</div>
+				{{#if emailmessage}}
+				<div class="form-group">
+					<span style="color:red">{{emailmessage}}</span>
+				</div>
+				{{/if}}
+				<div class="form-group">
+					<label>Password</label>
+					<input class="form-control" type="password" name="password">
+				</div>
+				{{#if message}}
+				<div class="form-group">
+					<span style="color:red">{{message}}</span>
+				</div>
+				{{/if}}
+				{{#if passwordRequired}}
+				<div class="form-group">
+					<span style="color:red">{{passwordRequired}}</span>
+				</div>
+				{{/if}}
+				<button type="submit" class="btn btn-success">Login</button>
+			    </form>
+			 		
+			</div>
+		
+
+	</div>
+
+
+</body>
+
+

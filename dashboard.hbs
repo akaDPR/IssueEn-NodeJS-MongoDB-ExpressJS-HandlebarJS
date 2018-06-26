@@ -1,0 +1,51 @@
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="user-deatails">
+		<div class="row">
+			<div class="col-md-12">
+			<div class="container">
+				{{#if user}}
+				<span class="label label-info">{{user.email}}</span>
+				{{/if}}
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="issue">
+		<div class="container">
+			<form action="/user/issue" method="POST">
+				<div class="form-group">
+					<label>Issue</label>
+					<input type="text" name="issue" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Seviority</label>
+					<select class="form-control" name="issuetype">
+						<option value="3">High</option>
+						<option value="2">Medium</option>
+						<option value="1">Low</option>
+
+					</select>
+				</div>
+				<button class="btn btn-success" type="submit">Post Issue</button>
+			</form>
+		</div>
+	</div>
+	{{issues}}
+	<!-- {{#if issues}}
+	{{#each issues}}
+	<div class="issue-list">
+		
+		<li class="label label-info">{{issues.issue}}</li>
+		<li class="label label-info">{{issues.type}}</li>
+	</div>
+	{{/each}}
+	{{/if}} -->
+</body>
+
+
